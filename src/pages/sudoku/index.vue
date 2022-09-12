@@ -11,15 +11,15 @@ const solveProblem = () => {
 </script>
 
 <template>
-  <div class="parent" w-400px h-400px mx-auto>
+  <div class="parent" max-w-400px h-400px mx-auto>
     <div
       v-for="(arr, key) in matrix" :key="key" w-full h-full border border-width-2 border-gray dark:border-white
       class="parent"
     >
       <div
-        v-for="(item, index) in arr" :key="index" border border-amber transition :class=" !item.includes('.') ? 'border-green' : ''"
+        v-for="(item, index) in arr" :key="index" border border-amber transition flex :class=" !(item.toString()).includes('.') ? 'border-green' : ''"
       >
-        <div v-show="item === '.' ? false : true" transition>
+        <div v-show="item === '.' ? false : true" transition flex justify-center items-center flex-1>
           {{ item === '.' ? '' : item }}
         </div>
       </div>
